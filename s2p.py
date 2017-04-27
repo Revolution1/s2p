@@ -6,6 +6,8 @@ import sys
 
 from png import png
 
+__version__ = '0.1.0'
+
 
 def convert(data, f):
     if len(data) % 3:
@@ -29,12 +31,14 @@ def decode(data, f):
 
 
 def main():
-    p = argparse.ArgumentParser(description="Convert string to png image.")
+    p = argparse.ArgumentParser(description="Convert string to png image. <revol.cai@gmail.com >")
     p.add_argument('input', metavar='input', type=str,
                    help="input file's filename, '-' means read from stdin")
     p.add_argument('-o', dest='output', default='-',
                    help="output filename (default: stdout), '-' means output to stdout")
     p.add_argument('-d', dest='decode', action='store_true', help="convert png to string")
+    p.add_argument('-v', '--version', action='version', version=__version__)
+
     arg = p.parse_args()
     if arg.decode:
         if arg.input == '-':
