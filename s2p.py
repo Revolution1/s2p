@@ -31,7 +31,7 @@ def decode(data, f):
 
 
 def main():
-    p = argparse.ArgumentParser(description="Convert string to png image. <revol.cai@gmail.com >")
+    p = argparse.ArgumentParser(description="Convert string to png image, for lovely Cisy. <revol.cai@gmail.com> ")
     p.add_argument('input', metavar='input', type=str,
                    help="input file's filename, '-' means read from stdin")
     p.add_argument('-o', dest='output', default='-',
